@@ -3,6 +3,9 @@ package-lock.json
 /pkg
 /*.tgz
 /dist
+/dist-test
 DEBUG-*
 /.yarn
 /.vscode
+.DS_Store
+agent-tools/

@@ -1,28 +1,28 @@
 {
 	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
 	"type": "connection",
-	"id": "your-module-name",
-	"name": "your-module-name",
-	"shortname": "module-shortname",
-	"description": "A short one line description of your module",
+	"id": "dmxcore-dmxcore100",
+	"name": "dmxcore-dmxcore100",
+	"shortname": "dmxcore",
+	"description": "Control a DMX Core 100 over the Integration API: catalog-driven cues, presets, levels, and live WebSocket status on Companion buttons.",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
-	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-dmxcore-dmxcore100.git",
+	"bugs": "https://github.com/bitfocus/companion-module-dmxcore-dmxcore100/issues",
 	"maintainers": [
 		{
-			"name": "Your name",
-			"email": "Your email"
+			"name": "Alex Hughes",
+			"email": "alex@alexwhughes.com"
 		}
 	],
 	"runtime": {
-		"type": "node22",
+		"type": "node26",
 		"api": "nodejs-ipc",
 		"apiVersion": "0.0.0",
 		"entrypoint": "../dist/main.js"
 	},
-	"legacyIds": [],
-	"manufacturer": "Your company",
-	"products": ["Your product"],
-	"keywords": []
+	"legacyIds": ["dmxcore-100"],
+	"manufacturer": "DMX Core",
+	"products": ["DMX Core 100"],
+	"keywords": ["dmx", "integration-api", "lighting", "cue", "preset", "playback"]
 }

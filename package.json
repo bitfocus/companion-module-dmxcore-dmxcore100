@@ -1,6 +1,6 @@
 {
-	"name": "your-module-name",
-	"version": "0.1.0",
+	"name": "companion-module-dmxcore-dmxcore100",
+	"version": "1.0.1",
 	"main": "dist/main.js",
 	"type": "module",
 	"scripts": {
@@ -11,30 +11,34 @@
 		"build:main": "tsc -p tsconfig.build.json",
 		"dev": "tsc -p tsconfig.build.json --watch",
 		"lint:raw": "eslint",
-		"lint": "run lint:raw ."
+		"lint": "run lint:raw .",
+		"test": "tsc -p tsconfig.test.json --pretty false && node --test 'dist-test/*.test.js'",
+		"mock": "node scripts/mock-dmxcore-api.mjs"
 	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-your-module-name.git"
+		"url": "git+https://github.com/bitfocus/companion-module-dmxcore-dmxcore100.git"
 	},
 	"engines": {
-		"node": "^22.20",
+		"node": "^26.5",
 		"yarn": "^4"
 	},
 	"dependencies": {
-		"@companion-module/base": "2.0.4"
+		"@companion-module/base": "2.1.3",
+		"ws": "^8.21.3"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^3.1.0",
-		"@types/node": "^22.19.17",
-		"eslint": "^9.39.4",
+		"@types/node": "^26.4.1",
+		"@types/ws": "^8.18.1",
+		"eslint": "^10.2.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.4.0",
-		"prettier": "^3.8.3",
+		"prettier": "^3.9.6",
 		"rimraf": "^6.1.3",
 		"typescript": "~6.0.3",
-		"typescript-eslint": "^8.59.0"
+		"typescript-eslint": "^8.69.0"
 	},
 	"prettier": "@companion-module/tools/.prettierrc.json",
 	"lint-staged": {
@@ -45,5 +49,5 @@
 			"yarn lint:raw --fix"
 		]
 	},
-	"packageManager": "yarn@4.17.0"
+	"packageManager": "yarn@4.18.0"
 }
