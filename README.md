@@ -14,7 +14,7 @@ Requires **Companion 5.0 or later**.
 
 ## Install (import the module)
 
-Companion loads this module from a packaged `.tgz` file (for example `dmxcore-dmxcore100-1.0.1.tgz`).
+Companion loads this module from a packaged `.tgz` file (for example `dmxcore-dmxcore100-1.0.0.tgz`).
 
 1. Open Companion and go to **Modules**.
 2. Choose **Import Module Package**.
@@ -52,12 +52,12 @@ Full setup notes (including macOS Local Network permissions) are in [companion/H
 
 After the connection is online, open the **Presets** tab and drag buttons onto your Stream Deck layout. Presets are built from the **live catalog** on your device:
 
-| Section | Useful for |
-| --- | --- |
-| **Playback** | Scenes and Timelines in separate groups (Sounds too, when present) |
-| **Looks & buttons → Control** | Switch toggles (presets, mute, blackout, …) and **Stop Playback** |
-| **Levels → Rotary** | **Master Dimmer** and **Audio Volume** encoders |
-| **Device → Status** | Now Playing and refresh |
+| Section                       | Useful for                                                         |
+| ----------------------------- | ------------------------------------------------------------------ |
+| **Playback**                  | Scenes and Timelines in separate groups (Sounds too, when present) |
+| **Looks & buttons → Control** | Switch toggles (presets, mute, blackout, …) and **Stop Playback**  |
+| **Levels → Rotary**           | **Master Dimmer** and **Audio Volume** encoders                    |
+| **Device → Status**           | Now Playing and refresh                                            |
 
 You can also build custom buttons with actions such as Activate scene (optional loop / fades for cues and sounds), System actions (buttons like Stop), Switch entity, Set / bump level, and Set choice.
 
