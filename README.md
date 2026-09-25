@@ -14,7 +14,7 @@ Requires **Companion 5.0 or later**.
 
 ## Install (import the module)
 
-Companion loads this module from a packaged `.tgz` file (for example `dmxcore-dmxcore100-1.0.0.tgz`).
+Companion loads this module from a packaged `.tgz` file (for example `dmxcore-dmxcore100-1.0.1.tgz`).
 
 1. Open Companion and go to **Modules**.
 2. Choose **Import Module Package**.

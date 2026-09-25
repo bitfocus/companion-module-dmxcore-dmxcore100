@@ -49,7 +49,7 @@ body:
           - **OS**: Windows 10
           - **Browser**: Chrome 94
           - **Companion Version**: 2.2.0-b177f8fb-3722
-          - **Module Version**: 1.0.0
+          - **Module Version**: 1.0.1
           - **Device Firmware/Software Version (If applicable)**: 3.0.6
           - **Device Model (If applicable)**: My Device PRO
       value: |
