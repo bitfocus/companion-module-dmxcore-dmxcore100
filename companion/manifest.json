@@ -21,7 +21,7 @@
 		"apiVersion": "0.0.0",
 		"entrypoint": "../dist/main.js"
 	},
-	"legacyIds": ["dmxcore-100"],
+	"legacyIds": [],
 	"manufacturer": "DMX Core",
 	"products": ["DMX Core 100"],
 	"keywords": ["dmx", "integration-api", "lighting", "cue", "preset", "playback"]

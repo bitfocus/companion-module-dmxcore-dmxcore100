@@ -16,6 +16,7 @@ import {
 	isSwitchOn,
 	nowPlayingMatchesEntity,
 	replaceCatalog,
+	variableDefinitionsFromState,
 	variableValuesFromState,
 } from './state.js'
 import { formatPercent, formatPercentUnit, percentToLevel } from './util.js'
@@ -147,6 +148,7 @@ void test('applies catalog and state into variables', () => {
 		{ code: 'system.nowplaying', name: 'Now Playing', kind: 'sensor' },
 		{ code: 'cv.Mode', name: 'Mode', kind: 'select', choices: ['A', 'B'] },
 		{ code: 'cue.INTRO', name: 'Intro', kind: 'scene' },
+		{ code: 'system.stop', name: 'Stop', kind: 'button' },
 	])
 
 	applyStates(
@@ -173,6 +175,11 @@ void test('applies catalog and state into variables', () => {
 	assert.equal(values[entityVariableId('switch', 'preset.PARTY')], 'on')
 	assert.equal(values[entityVariableId('select', 'cv.Mode')], 'B')
 	assert.equal(values[entityVariableId('sensor', 'system.nowplaying')], 'Cue: INTRO')
+	const definitions = variableDefinitionsFromState(state)
+	assert.equal(Object.hasOwn(values, entityVariableId('scene', 'cue.INTRO')), false)
+	assert.equal(Object.hasOwn(values, entityVariableId('button', 'system.stop')), false)
+	assert.equal(Object.hasOwn(definitions, entityVariableId('scene', 'cue.INTRO')), false)
+	assert.equal(Object.hasOwn(definitions, entityVariableId('button', 'system.stop')), false)
 	assert.equal(nowPlayingMatchesEntity(state, 'cue.INTRO'), true)
 	assert.equal(nowPlayingMatchesEntity(state, 'cue.OUTRO'), false)
 

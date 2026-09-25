@@ -172,7 +172,7 @@ export function variableDefinitionsFromState(state: DmxCoreState): Record<string
 	}
 
 	for (const entity of state.entities.values()) {
-		if (entity.kind === 'button' || entity.kind === 'scene') continue
+		if (!entityHasVariable(entity.kind)) continue
 		definitions[entityVariableId(entity.kind, entity.code)] = { name: entityVariableName(entity) }
 	}
 
@@ -219,6 +219,7 @@ export function variableValuesFromState(state: DmxCoreState): Record<string, str
 	}
 
 	for (const entity of state.entities.values()) {
+		if (!entityHasVariable(entity.kind)) continue
 		const id = entityVariableId(entity.kind, entity.code)
 		const entityState = state.states.get(entity.code)
 		values[id] = formatEntityVariable(entity.kind, entityState)
@@ -238,6 +239,24 @@ function findAudioVolumeCode(state: DmxCoreState): string | null {
 		if (/audio\s*volume|audiovolume|system\.audiovolume|audio\.volume/.test(hay)) return entity.code
 	}
 	return null
+}
+
+/** Scenes and buttons are actions, not live values, so they are not Companion variables. */
+function entityHasVariable(kind: EntityKind): boolean {
+	switch (kind) {
+		case 'button':
+		case 'scene':
+			return false
+		case 'switch':
+		case 'level':
+		case 'select':
+		case 'sensor':
+			return true
+		default: {
+			const _exhaustive: never = kind
+			return _exhaustive
+		}
+	}
 }
 
 function formatEntityVariable(kind: EntityKind, entityState: EntityState | undefined): string {
